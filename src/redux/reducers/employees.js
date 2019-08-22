@@ -69,11 +69,17 @@ const initialState = {
   byIds: {},
 }
 
-export default function(state = initialState, action) {
+function employees(state = initialState, action) {
   switch (action.type) {
-    case ADD_EMPLOYEE: {}
-    case EDIT_EMPLOYEE: {}
+    case ADD_EMPLOYEE: {
+      return "add employee"
+    }
+    case EDIT_EMPLOYEE: {
+      return "edit employee"
+    }
     default:
       return state
   }
 }
+
+export default employees

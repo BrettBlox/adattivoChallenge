@@ -3,7 +3,7 @@ import AddEmployee from './components/AddEmployee'
 import EmployeeList from './components/EmployeeList'
 import FilterEmployees from './components/FilterEmployees'
 
-import './app.css'
+import './App.css'
 
 export default function App() {
   return (
