@@ -2,11 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addEmployee } from '../redux/actions'
 import uuid from 'uuid'
+import M from 'materialize-css'
 
 class AddEmployee extends React.Component {
   constructor(props) {
     super(props)
     this.state = { isActive: false }
+  }
+
+  componentDidMount() {
+    let dropdowns = document.querySelectorAll('.dropdown-trigger')
+    M.Dropdown.init(dropdowns)
   }
 
   handleChange = e => {
@@ -26,57 +32,63 @@ class AddEmployee extends React.Component {
   render() {
     return (
       <div className='add-employee row card-panel'>
+        <a
+          className='btn-floating btn-large waves-effect waves-light red dropdown-trigger'
+          href='#'
+          data-target='form'>
+          <i className='large material-icons'>add</i>
+        </a>
         <h3>Add New Employee</h3>
-        <form className='col s12' onSubmit={this.handleSubmit}>
+        <form
+          id='form-dropdown'
+          className='col s12 dropdown-content'
+          onSubmit={this.handleSubmit}>
           <div className='input-field col s5'>
+            <label htmlFor='first-name'>First Name</label>
             <input
-              className='form-input'
               name='firstName'
               type='text'
               id='first-name'
-              placeholder='First Name'
               onChange={this.handleChange}
             />
           </div>
           <div className='input-field col s2'>
+            <label htmlFor='middle-initial'>Middle Initial</label>
             <input
-              className='form-input'
               name='middleInitial'
               type='text'
               id='middle-initial'
-              placeholder='Middle Initial'
               onChange={this.handleChange}
             />
           </div>
           <div className='input-field col s5'>
+            <label htmlFor='last-name'>Last Name</label>
             <input
-              className='form-input'
               name='lastName'
               type='text'
               id='last-name'
-              placeholder='Last Name'
               onChange={this.handleChange}
             />
           </div>
           <div className='input-field col s6'>
-            <label htmlFor='date-of-birth'>Date of Employment</label>
+            <label htmlFor='date-of-birth'>
+              Date of Employment: Month DD, YYYY
+            </label>
             <input
-              className='form-input'
               name='dateOfBirth'
-              type='date'
+              type='text'
               id='date-of-birth'
-              placeholder='Date of Birth'
               onChange={this.handleChange}
             />
           </div>
           <div className='input-field col s6'>
-            <label htmlFor='date-of-birth'>Date of Employment</label>
+            <label htmlFor='date-of-birth'>
+              Date of Employment: Month DD, YYYY
+            </label>
             <input
-              className='form-input'
               name='dateOfEmployment'
-              type='date'
+              type='text'
               id='date-of-birth'
-              placeholder='Date of Employment'
               onChange={this.handleChange}
             />
           </div>
@@ -86,7 +98,6 @@ class AddEmployee extends React.Component {
               <input
                 type='checkbox'
                 id='isActive'
-                type='checkbox'
                 name='isActive'
                 onChange={this.toggleActive}
               />

@@ -4,7 +4,7 @@ import Employee from './Employee'
 import { getEmployeesByVisibilityFilter } from '../redux/selectors'
 
 const EmployeeList = ({ employees }) => (
-  <div className='employee-list card-panel'>
+  <div className='employee-list'>
     {employees.map((employee, index) => {
       return <Employee key={`emoloyee-${employee.id}`} employee={employee} />
     })}
