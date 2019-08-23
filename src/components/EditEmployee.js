@@ -10,6 +10,10 @@ class EditEmployee extends Component {
     this.state = {}
   }
 
+  componentDidMount() {
+    console.log()
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -22,20 +26,8 @@ class EditEmployee extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.setState({ ...this.state, id: uuid() })
-    this.props.addEmployee(this.state)
-    this.resetInputFields()
-  }
-
-  resetInputFields() {
-    this.setState({
-      firstName: '',
-      middleInitial: '',
-      lastName: '',
-      dateOfBirth: '',
-      dateOfEmployment: '',
-      isActive: false,
-    })
+    this.setState({ id: this.props.employee.id, ...this.state })
+    this.props.editEmployee(this.state)
   }
 
   render() {
@@ -45,28 +37,28 @@ class EditEmployee extends Component {
         trigger={
           <Button floating small className='green' waves='light' icon='edit' />
         }>
-        <form className='modal-content' onSubmit={this.handleSubmit}>
+        <form className='modal-content editForm' onSubmit={this.handleSubmit}>
           <Row>
             <TextInput
               validate
               label='First Name'
               name='firstName'
               onChange={this.handleChange}
-              value={this.props.employee.firstName}
+              defaultValue={this.props.employee.firstName}
             />
             <TextInput
               validate
               label='Middle Initial'
               name='middleInitial'
               onChange={this.handleChange}
-              value={this.props.employee.middleInitial}
+              defaultValue={this.props.employee.middleInitial}
             />
             <TextInput
               validate
               label='Last Name'
               name='lastName'
               onChange={this.handleChange}
-              value={this.props.employee.lastName}
+              defaultValue={this.props.employee.lastName}
             />
           </Row>
           <Row>
@@ -75,14 +67,14 @@ class EditEmployee extends Component {
               label='Date of Birth'
               name='dateOfBirth'
               onChange={this.handleChange}
-              value={this.props.employee.dateOfBirth}
+              defaultValue={this.props.employee.dateOfBirth}
             />
             <TextInput
               validate
               label='Date of Employment'
               name='dateOfEmployment'
               onChange={this.handleChange}
-              value={this.props.employee.dateOfEmployment}
+              defaultValue={this.props.employee.dateOfEmployment}
             />
 
             <Switch
@@ -90,7 +82,7 @@ class EditEmployee extends Component {
               onLabel='Active'
               onChange={this.toggleActive}
               name='isActive'
-              checked={this.props.employee.isActive && 'checked'}
+              checked={this.props.employee.isActive && true}
             />
           </Row>
           <Button

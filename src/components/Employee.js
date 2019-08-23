@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'react-materialize'
 import EditEmployee from './EditEmployee'
 
 const active = <div style={{ color: 'blue' }}>Active</div>

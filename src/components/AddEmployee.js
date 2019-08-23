@@ -24,6 +24,7 @@ class AddEmployee extends Component {
     e.preventDefault()
     this.setState({ ...this.state, id: uuid() })
     this.props.addEmployee(this.state)
+    document.getElementById('add-form').reset()
     this.resetInputFields()
   }
 
@@ -46,7 +47,10 @@ class AddEmployee extends Component {
           trigger={
             <Button floating large className='red' waves='light' icon='add' />
           }>
-          <form className='modal-content' onSubmit={this.handleSubmit}>
+          <form
+            className='modal-content'
+            id='add-form'
+            onSubmit={this.handleSubmit}>
             <Row>
               <TextInput
                 validate

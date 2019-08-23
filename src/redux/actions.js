@@ -20,9 +20,11 @@ export const addEmployee = content => ({
   },
 })
 
-export const editEmployee = id => ({
+export const editEmployee = content => ({
   type: EDIT_EMPLOYEE,
-  payload: {},
+  payload: {
+    content,
+  },
 })
 
 export function toggleActive(index) {
