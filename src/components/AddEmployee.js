@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addEmployee } from '../redux/actions'
 import uuid from 'uuid'
 import { Button, Modal, TextInput, Switch, Row, Col } from 'react-materialize'
 
-class AddEmployee extends React.Component {
+class AddEmployee extends Component {
   constructor(props) {
     super(props)
     this.state = { isActive: false }

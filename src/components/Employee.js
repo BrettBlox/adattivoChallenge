@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'react-materialize'
+import EditEmployee from './EditEmployee'
 
 const active = <div style={{ color: 'blue' }}>Active</div>
 const inactive = <div style={{ color: 'red' }}>Not Active</div>
@@ -15,7 +16,7 @@ const Employee = ({ employee }) => (
       Date of Employment: {employee.dateOfEmployment}
     </div>
     <div className='employee-info'>{employee.isActive ? active : inactive}</div>
-    <Button floating small className='green' waves='light' icon='edit' />
+    <EditEmployee employee={employee} />
   </div>
 )
 

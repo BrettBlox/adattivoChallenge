@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addEmployee } from '../redux/actions'
+import { editEmployee } from '../redux/actions'
 import uuid from 'uuid'
 import { Button, Modal, TextInput, Switch, Row, Col } from 'react-materialize'
 
-class AddEmployee extends React.Component {
+class EditEmployee extends Component {
   constructor(props) {
     super(props)
-    this.state = { }
+    this.state = {}
   }
 
   handleChange = e => {
@@ -40,73 +40,72 @@ class AddEmployee extends React.Component {
 
   render() {
     return (
-      <div className='add-employee'>
-        <Modal
-          header='Add New Employee'
-          trigger={
-            <Button floating large className='red' waves='light' icon='add' />
-          }>
-          <form className='modal-content' onSubmit={this.handleSubmit}>
-            <Row>
-              <TextInput
-                validate
-                label='First Name'
-                name='firstName'
-                onChange={this.handleChange}
-                value={this.state.firstName}
-              />
-              <TextInput
-                validate
-                label='Middle Initial'
-                name='middleInitial'
-                onChange={this.handleChange}
-                value={this.state.middleInitial}
-              />
-              <TextInput
-                validate
-                label='Last Name'
-                name='lastName'
-                onChange={this.handleChange}
-                value={this.state.lastName}
-              />
-            </Row>
-            <Row>
-              <TextInput
-                validate
-                label='Date of Birth'
-                name='dateOfBirth'
-                onChange={this.handleChange}
-                value={this.state.dateOfBirth}
-              />
-              <TextInput
-                validate
-                label='Date of Employment'
-                name='dateOfEmployment'
-                onChange={this.handleChange}
-                value={this.state.dateOfEmployment}
-              />
+      <Modal
+        header='Edit Employee Information'
+        trigger={
+          <Button floating small className='green' waves='light' icon='edit' />
+        }>
+        <form className='modal-content' onSubmit={this.handleSubmit}>
+          <Row>
+            <TextInput
+              validate
+              label='First Name'
+              name='firstName'
+              onChange={this.handleChange}
+              value={this.props.employee.firstName}
+            />
+            <TextInput
+              validate
+              label='Middle Initial'
+              name='middleInitial'
+              onChange={this.handleChange}
+              value={this.props.employee.middleInitial}
+            />
+            <TextInput
+              validate
+              label='Last Name'
+              name='lastName'
+              onChange={this.handleChange}
+              value={this.props.employee.lastName}
+            />
+          </Row>
+          <Row>
+            <TextInput
+              validate
+              label='Date of Birth'
+              name='dateOfBirth'
+              onChange={this.handleChange}
+              value={this.props.employee.dateOfBirth}
+            />
+            <TextInput
+              validate
+              label='Date of Employment'
+              name='dateOfEmployment'
+              onChange={this.handleChange}
+              value={this.props.employee.dateOfEmployment}
+            />
 
-              <Switch
-                offLabel='Incactive'
-                onLabel='Active'
-                onChange={this.toggleActive}
-                name='isActive'
-              />
-            </Row>
-            <Button
-              className='modal-action modal-close'
-              type='submit'
-              waves='light'>
-              Submit
-            </Button>
-          </form>
-        </Modal>
-      </div>
+            <Switch
+              offLabel='Incactive'
+              onLabel='Active'
+              onChange={this.toggleActive}
+              name='isActive'
+              checked={this.props.employee.isActive && 'checked'}
+            />
+          </Row>
+          <Button
+            className='modal-action modal-close'
+            type='submit'
+            waves='light'>
+            Submit
+          </Button>
+        </form>
+      </Modal>
     )
   }
 }
 
 export default connect(
   null,
-  { addEmployee }
-)(AddEmployee)
+  { editEmployee }
+)(EditEmployee)
