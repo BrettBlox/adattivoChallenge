@@ -7,7 +7,7 @@ import { Button, Modal, TextInput, Switch, Row, Col } from 'react-materialize'
 class AddEmployee extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { isActive: false }
+    this.state = { }
   }
 
   handleChange = e => {

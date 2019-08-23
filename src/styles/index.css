@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento&display=swap');
 
 body {
-  background-color: grey;
+  background-image: linear-gradient(to bottom, #173e43, hsl(0, 100%, 18%) 120%);
   padding: 2rem;
   font-family: 'Quattrocento', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,13 +34,11 @@ body {
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 /*******EMPLOYEE*******/
 .employee {
-  border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
-  padding: 1rem;
 }
 
 .employee > h2 {
@@ -55,4 +53,5 @@ body {
 /*******Form***********/
 .add-employee {
   text-align: center;
+  margin-top: 1rem;
 }
