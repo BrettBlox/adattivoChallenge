@@ -1,21 +1,21 @@
-/***** action types ******/
-
-export const ADD_EMPLOYEE = 'ADD_EMPLOYEE'
-export const EDIT_EMPLOYEE = 'EDIT_EMPLOYEE'
-export const TOGGLE_ACTIVE = 'TOGGLE_ACTIVE'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+import {
+  ADD_EMPLOYEE,
+  EDIT_EMPLOYEE,
+  SET_VISIBILITY_FILTER,
+  TOGGLE_ACTIVE,
+} from './actionTypes'
 
 /***** other constants ******/
 export const VISIBILITY_FILTERS = {
-  ALL: 'all',
-  ACTIVE: 'active',
-  INACTIVE: 'inactive',
+  ALL: 'All',
+  ACTIVE: 'Active',
+  INACTIVE: 'Inactive',
 }
 
 /***** action creators ******/
 export const addEmployee = content => ({
   type: ADD_EMPLOYEE,
-  payload: {content},
+  payload: { content },
 })
 export const editEmployee = id => ({
   type: EDIT_EMPLOYEE,
@@ -25,4 +25,7 @@ export function toggleActive(index) {
   return { type: TOGGLE_ACTIVE, index }
 }
 
-export const setVisibilityFilter = filter => ({ type: SET_VISIBILITY_FILTER, payload: { filter } });
+export const setVisibilityFilter = filter => ({
+  type: SET_VISIBILITY_FILTER,
+  payload: { filter },
+})

@@ -5,13 +5,9 @@ import { getEmployeesByVisibilityFilter } from '../redux/selectors'
 
 const EmployeeList = ({ employees }) => (
   <div className='employee-list'>
-    {employees && employees.length
-      ? employees.map((employee, index) => {
-          return (
-            <Employee key={`emoloyee-${employee.id}`} employee={employee} />
-          )
-        })
-      : 'No employees, yay!'}
+    {employees.map((employee, index) => {
+      return <Employee key={`emoloyee-${employee.id}`} employee={employee} />
+    })}
   </div>
 )
 

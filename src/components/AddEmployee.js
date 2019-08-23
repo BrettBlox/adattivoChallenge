@@ -6,6 +6,7 @@ import uuid from 'uuid'
 export default class AddEmployee extends Component {
   state = {
     newEmployee: {
+      id: null,
       firstName: '',
       lastName: '',
       middleInitial: '',

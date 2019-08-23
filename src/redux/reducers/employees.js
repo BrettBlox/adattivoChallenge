@@ -1,11 +1,4 @@
-import { combineReducers } from 'redux'
-
-import {
-  EDIT_EMPLOYEE,
-  ADD_EMPLOYEE,
-  SET_VISIBILITY_FILTER,
-  VISIBILITY_FILTERS,
-} from './actions'
+import { ADD_EMPLOYEE, EDIT_EMPLOYEE } from '../actionTypes'
 
 const initialState = {
   employees: [
@@ -94,20 +87,7 @@ const initialState = {
   byIds: {},
 }
 
-const { ALL } = VISIBILITY_FILTERS.ALL
-
-function visibilityFilter(state = ALL, action) {
-  switch (action.type) {
-    case SET_VISIBILITY_FILTER: {
-      return action.payload.filter
-    }
-    default: {
-      return state
-    }
-  }
-}
-
-function employees(state = initialState, action) {
+export default function employees(state = initialState, action) {
   switch (action.type) {
     case ADD_EMPLOYEE: {
       return 'add employee'
@@ -119,10 +99,3 @@ function employees(state = initialState, action) {
       return state
   }
 }
-
-const employeeApp = combineReducers({
-  visibilityFilter,
-  employees,
-})
-
-export default employeeApp
