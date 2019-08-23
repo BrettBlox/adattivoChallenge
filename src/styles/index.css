@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento&display=swap');
 
 body {
-  background-color: white;
+  background-color: grey;
   padding: 2rem;
   font-family: 'Quattrocento', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,35 +15,13 @@ body {
   text-align: center;
   margin: 2rem;
 }
-.filters > button {
-  font-family: 'Quattrocento', sans-serif;
-  margin: 2rem;
-  font-size: 2rem;
-  background-color: grey;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, #d7a150, #d7a150 50%, grey 50%);
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: all 0.5s;
-  border: none;
-}
 
-.filters > button:focus {
-  outline: none;
-}
-
-.filters > h2:hover {
-  transition: all 0.3s cubic-bezier(0, 0, 0.23, 1);
-  background-position: 0%;
-  transform: translateY(-3px) scale(1.1);
-}
 /** visibility filters **/
 .filter {
   padding: 0.3rem 0;
   margin: 0 2rem;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .filter--active {
   border-bottom: 1px solid black;
@@ -56,19 +34,25 @@ body {
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
 }
 /*******EMPLOYEE*******/
 .employee {
-  border: 1px solid black;
-  border-radius: 4px;
-  box-shadow: 0px 3px 10px rgba(25, 17, 34, 2);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
   padding: 1rem;
 }
 
 .employee > h2 {
   text-align: center;
+  font-size: 2rem;
 }
 
 .employee .employee-info {
   margin-bottom: 1rem;
+}
+
+/*******Form***********/
+.add-employee {
+  text-align: center;
 }

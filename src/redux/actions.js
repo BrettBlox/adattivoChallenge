@@ -15,12 +15,16 @@ export const VISIBILITY_FILTERS = {
 /***** action creators ******/
 export const addEmployee = content => ({
   type: ADD_EMPLOYEE,
-  payload: { content },
+  payload: {
+    content,
+  },
 })
+
 export const editEmployee = id => ({
   type: EDIT_EMPLOYEE,
   payload: {},
 })
+
 export function toggleActive(index) {
   return { type: TOGGLE_ACTIVE, index }
 }

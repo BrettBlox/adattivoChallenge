@@ -84,13 +84,16 @@ const initialState = {
       isActive: false,
     },
   ],
-  byIds: {},
 }
 
 export default function employees(state = initialState, action) {
   switch (action.type) {
     case ADD_EMPLOYEE: {
-      return 'add employee'
+      const { content } = action.payload
+      return {
+        ...state,
+        employees: [...state.employees, content],
+      }
     }
     case EDIT_EMPLOYEE: {
       return 'edit employee'

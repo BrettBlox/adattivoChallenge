@@ -1,109 +1,114 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import { addEmployee } from '../redux/actions'
 import uuid from 'uuid'
 
-
-export default class AddEmployee extends Component {
-  state = {
-    newEmployee: {
-      id: null,
-      firstName: '',
-      lastName: '',
-      middleInitial: '',
-      dateOfBirth: '',
-      dateOfEmployement: '',
-      isActive: '',
-    },
+class AddEmployee extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { isActive: false }
   }
 
-  handleChange = evt => {
-    this.setState({
-      [evt.target.name]: evt.target.value,
-    })
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
-  handleSubmit = evt => {
-    console.log('added employee')
+
+  toggleActive = e => {
+    this.setState({ isActive: !this.state.isActive })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.setState({ ...this.state, id: uuid() })
+    this.props.addEmployee(this.state)
   }
 
   render() {
     return (
-      <div className='new-employee-container'>
-        <h1>ADD EMPLOYEE</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className='employee-input'>
-            <label htmlFor='firstName'>First Name</label>
-            <br />
+      <div className='add-employee row card-panel'>
+        <h3>Add New Employee</h3>
+        <form className='col s12' onSubmit={this.handleSubmit}>
+          <div className='input-field col s5'>
             <input
-              type='text'
-              placeholder='First Name'
-              id='firstName'
+              className='form-input'
               name='firstName'
-              value={this.state.employee}
+              type='text'
+              id='first-name'
+              placeholder='First Name'
               onChange={this.handleChange}
             />
           </div>
-          <div className='employee-input'>
-            <label htmlFor='middleInitial'>Middle Initial</label>
-            <br />
+          <div className='input-field col s2'>
             <input
-              type='text'
-              placeholder='Middle Initial'
-              id='middleInitial'
+              className='form-input'
               name='middleInitial'
-              value={this.state.employee}
+              type='text'
+              id='middle-initial'
+              placeholder='Middle Initial'
               onChange={this.handleChange}
             />
           </div>
-          <div className='employee-input'>
-            <label htmlFor='lastName'>Last Name</label>
-            <br />
+          <div className='input-field col s5'>
             <input
-              type='text'
-              placeholder='Last Name'
-              id='lastName'
+              className='form-input'
               name='lastName'
-              value={this.state.employee}
+              type='text'
+              id='last-name'
+              placeholder='Last Name'
               onChange={this.handleChange}
             />
           </div>
-          <div className='employee-input'>
-            <label htmlFor='dateOfBirth'>Date of Birth</label>
-            <br />
+          <div className='input-field col s6'>
+            <label htmlFor='date-of-birth'>Date of Employment</label>
             <input
-              type='text'
-              placeholder='Date of Birth'
-              id='dateOfBirth'
+              className='form-input'
               name='dateOfBirth'
-              value={this.state.employee}
+              type='date'
+              id='date-of-birth'
+              placeholder='Date of Birth'
               onChange={this.handleChange}
             />
           </div>
-          <div className='employee-input'>
-            <label htmlFor='dateOfEmployment'>Date of Employment</label>
-            <br />
+          <div className='input-field col s6'>
+            <label htmlFor='date-of-birth'>Date of Employment</label>
             <input
-              type='text'
-              placeholder='Date of Employment'
-              id='dateOfEmployment'
+              className='form-input'
               name='dateOfEmployment'
-              value={this.state.employee}
+              type='date'
+              id='date-of-birth'
+              placeholder='Date of Employment'
               onChange={this.handleChange}
             />
           </div>
-          <div className='employee-input'>
-            <label htmlFor='isActive'>Active?</label>
-            <input
-              type='checkbox'
-              placeholder='Active/Inactive'
-              id='isActive'
-              name='isActive'
-              value={this.state.employee}
-              onChange={this.handleChange}
-            />
+          <div className='switch col s6'>
+            <label>
+              Inactive
+              <input
+                type='checkbox'
+                id='isActive'
+                type='checkbox'
+                name='isActive'
+                onChange={this.toggleActive}
+              />
+              <span className='lever' />
+              Active
+            </label>
           </div>
-          <button>Add New Employee</button>
+          <div className='col sm6'>
+            <button
+              className='btn waves-effect waves-light'
+              type='submit'
+              name='action'>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     )
   }
 }
+
+export default connect(
+  null,
+  { addEmployee }
+)(AddEmployee)

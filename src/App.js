@@ -1,5 +1,5 @@
 import React from 'react'
-// import AddEmployee from './components/AddEmployee'
+import AddEmployee from './components/AddEmployee'
 import EmployeeList from './components/EmployeeList'
 import FilterEmployees from './components/FilterEmployees'
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className='App'>
       <FilterEmployees />
-      {/* <AddEmployee /> */}
+      <AddEmployee />
       <EmployeeList />
     </div>
   )
