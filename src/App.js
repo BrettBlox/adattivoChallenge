@@ -1,17 +1,16 @@
 import React from 'react'
-import AddEmployee from './components/AddEmployee'
+// import AddEmployee from './components/AddEmployee'
 import EmployeeList from './components/EmployeeList'
 import FilterEmployees from './components/FilterEmployees'
 
-import './App.css'
+import './styles/App.css'
 
 export default function App() {
   return (
-    <div>
-      <h1>Employee List</h1>
-      <AddEmployee />
-      <EmployeeList />
+    <div className='App'>
       <FilterEmployees />
+      {/* <AddEmployee /> */}
+      <EmployeeList />
     </div>
   )
 }
