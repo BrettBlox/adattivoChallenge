@@ -1,13 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento&display=swap');
 
+html {
+}
+
 body {
   background-image: linear-gradient(to bottom, #26a69a, #f44336);
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 3em;
   font-family: 'Quattrocento', sans-serif;
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.App {
+  min-height: 100vh;
+}
+
+/********LOGIN**********/
+.login-button {
+  align-self: center;
+}
+
 /*********FILTER*********/
 .filters {
   display: flex;
