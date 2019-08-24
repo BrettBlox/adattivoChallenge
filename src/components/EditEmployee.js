@@ -1,32 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { editEmployee } from '../redux/actions'
-import uuid from 'uuid'
-import { Button, Modal, TextInput, Switch, Row, Col } from 'react-materialize'
+import { Button, Modal, TextInput, Switch, Row } from 'react-materialize'
 
 class EditEmployee extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
-  }
-
-  componentDidMount() {
-    console.log()
+    this.state = {
+      id: this.props.employee.id,
+      firstName: this.props.employee.firstName,
+      middleInitial: this.props.employee.middleInitial,
+      lastName: this.props.employee.lastName,
+      dateOfBirth: this.props.employee.dateOfBirth,
+      dateOfEmployment: this.props.employee.dateOfEmployment,
+      isActive: false,
+    }
   }
 
   handleChange = e => {
     this.setState({
+      ...this.state,
       [e.target.name]: e.target.value,
     })
   }
 
   toggleActive = e => {
-    this.setState({ isActive: !this.state.isActive })
+    this.setState({ ...this.state, isActive: !this.state.isActive })
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    this.setState({ id: this.props.employee.id, ...this.state })
     this.props.editEmployee(this.state)
   }
 
@@ -76,13 +79,12 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfEmployment}
             />
-
             <Switch
               offLabel='Incactive'
               onLabel='Active'
-              onChange={this.toggleActive}
               name='isActive'
-              checked={this.props.employee.isActive && true}
+              checked={this.props.employee.isActive ? true : false}
+              onChange={this.toggleActive}
             />
           </Row>
           <Button

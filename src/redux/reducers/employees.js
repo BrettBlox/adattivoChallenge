@@ -95,7 +95,7 @@ export default function employees(state = initialState, action) {
         employees: [...state.employees, content],
       }
     }
-    case 'EDIT_EMPLOYEE': {
+    case EDIT_EMPLOYEE: {
       const index = state.employees.findIndex(
         item => item.id === action.payload.id
       )

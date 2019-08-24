@@ -1,19 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addEmployee } from '../redux/actions'
-import uuid from 'uuid'
-import { Button, Modal, TextInput, Switch, Row, Col } from 'react-materialize'
+import uuidv4 from 'uuid/v4'
+import { Button, Modal, TextInput, Switch, Row } from 'react-materialize'
 
 class AddEmployee extends Component {
   constructor(props) {
     super(props)
-    this.state = { isActive: false }
+    this.state = {
+      firstName: '',
+      middleInitial: '',
+      lastName: '',
+      dateOfBirth: '',
+      dateOfEmployment: '',
+      isActive: false,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      id: uuidv4(),
+    })
   }
 
   handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    })
+    this.setState({ ...this.state, [e.target.name]: e.target.value })
   }
 
   toggleActive = e => {
@@ -22,7 +34,7 @@ class AddEmployee extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.setState({ ...this.state, id: uuid() })
+    console.log(this.state.id)
     this.props.addEmployee(this.state)
     document.getElementById('add-form').reset()
     this.resetInputFields()
@@ -30,6 +42,7 @@ class AddEmployee extends Component {
 
   resetInputFields() {
     this.setState({
+      id: uuidv4(),
       firstName: '',
       middleInitial: '',
       lastName: '',
@@ -89,7 +102,6 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.dateOfEmployment}
               />
-
               <Switch
                 offLabel='Incactive'
                 onLabel='Active'
