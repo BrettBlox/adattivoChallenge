@@ -42,7 +42,7 @@ export default class App extends Component {
               large
               waves='light'
               className='red logout-button'
-              onClick={this.handleLogIOut}>
+              onClick={this.handleLogOut}>
               &larr;Logout
             </Button>
             <AddEmployee />
