@@ -96,18 +96,10 @@ export default function employees(state = initialState, action) {
       }
     }
     case EDIT_EMPLOYEE: {
-      const index = state.employees.findIndex(
-        item => item.id === action.payload.id
-      )
-      if (index > -1) {
-        return {
-          ...state,
-          employees: [
-            ...state.employees.slice(0, index),
-            action.payload,
-            ...state.employees.slice(index + 1),
-          ],
-        }
+      const { content } = action.payload
+      return {
+        ...state,
+        employees: [...state.employees, content],
       }
     }
     default:
