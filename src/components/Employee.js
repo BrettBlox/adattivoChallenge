@@ -2,19 +2,29 @@ import React from 'react'
 import { connect } from 'react-redux'
 import EditEmployee from './EditEmployee'
 
-const active = <div style={{ color: 'green' }}>Active</div>
-const inactive = <div style={{ color: 'red' }}>Not Active</div>
+const active = (
+  <h5 className='employee-info' style={{ color: '#26a69a' }}>
+    Active
+  </h5>
+)
+const inactive = (
+  <h5 className='employee-info' style={{ color: '#F44336' }}>
+    Not Active
+  </h5>
+)
 
 const Employee = ({ employee }) => (
   <div className='card-panel employee'>
     <h2>
       {employee.firstName} {employee.middleInitial}. {employee.lastName}
     </h2>
-    <div className='employee-info'>Date of Birth: {employee.dateOfBirth}</div>
     <div className='employee-info'>
-      Date of Employment: {employee.dateOfEmployment}
+      <b>Date of Birth:</b> {employee.dateOfBirth}
     </div>
-    <div className='employee-info'>{employee.isActive ? active : inactive}</div>
+    <div className='employee-info'>
+      <b>Date of Employment:</b> {employee.dateOfEmployment}
+    </div>
+    {employee.isActive ? active : inactive}
     <EditEmployee employee={employee} />
   </div>
 )

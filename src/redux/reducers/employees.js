@@ -63,7 +63,7 @@ const initialState = {
       middleInitial: 'G',
       lastName: 'Dyer',
       dateOfBirth: 'October 2, 1985',
-      dateOfEmployment: 'Januare 6, 2007',
+      dateOfEmployment: 'January 6, 2007',
       isActive: true,
     },
     {

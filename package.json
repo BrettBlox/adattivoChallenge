@@ -5,6 +5,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "materialize-css": "^1.0.0",
+    "netlify-identity-widget": "^1.5.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-materialize": "^3.3.4",

@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import netlifyIdentity from 'netlify-identity-widget'
 import employeeApp from './redux/reducers/index'
 import './styles/index.css'
 
@@ -13,6 +14,7 @@ const store = createStore(
 )
 
 const rootElement = document.getElementById('root')
+netlifyIdentity.init()
 ReactDOM.render(
   <Provider store={store}>
     <App />

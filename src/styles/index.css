@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento&display=swap');
 
 body {
-  background-image: linear-gradient(to bottom, #173e43, hsl(0, 100%, 18%) 120%);
-  padding: 2rem;
+  background-image: linear-gradient(to bottom, #26a69a, #f44336);
+  padding: 3em;
   font-family: 'Quattrocento', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
 }
 /*********FILTER*********/
 .filters {
@@ -27,8 +26,8 @@ body {
 
 .filter--active {
   font-size: 2.3rem;
-  color: hsl(0, 100%, 18%);
-  border-bottom: 1px solid hsl(0, 100%, 18%);
+  color: #f44336;
+  border-bottom: 1px solid #f44336;
 }
 
 /*******EMPLOYEE CONTAINER*******/
