@@ -31,7 +31,7 @@ body {
 }
 
 .login-button:hover {
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-1px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .logout-button:hover {
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-1px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
@@ -67,7 +67,6 @@ body {
 
 .filter--active {
   transform: translateY(-3px) scale(1.2);
-  /* font-size: 2.3rem; */
   color: #f44336;
   border-bottom: 1px solid #f44336;
 }
@@ -88,7 +87,7 @@ body {
 }
 
 .employee:hover {
-  transform: translateY(-1px) scale(1.01);
+  transform: translateY(-1px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
@@ -113,7 +112,7 @@ body {
 }
 
 .add-edit-employee:hover {
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-1px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
