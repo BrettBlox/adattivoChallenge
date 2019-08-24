@@ -3,7 +3,7 @@
 This application was part of the interview/application process for the Associate Contract Developer position at Adattivo in Boulder. 
 Applicants are given the choice between either a front end focused application using React and Redux or a backend focused application. 
 
-## To view the deployed version of the site visit:
+### To view the deployed version of the site visit:
 
 [https://adattivochallenge.netlify.com/](https://adattivochallenge.netlify.com/)
 
