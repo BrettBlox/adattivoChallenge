@@ -35,23 +35,36 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='App card-panel'>
+      <>
         {this.state.user ? (
-
-        <AddEmployee />
-        <FilterEmployees />
-        <EmployeeList />
-        ) : (
-          <>
+          <div className='App card-panel'>
             <Button
               large
-              waves-light
-              className='login-button'
-              onClick={this.handleLogIn}>
-              Login
+              waves='light'
+              className='red logout-button'
+              onClick={this.handleLogIOut}>
+              &larr;Logout
             </Button>
-          </>
-      </div>
+            <AddEmployee />
+            <FilterEmployees />
+            <EmployeeList />
+          </div>
+        ) : (
+          <div className='App'>
+            <div className='Login'>
+              <h1>Welcome</h1>
+              <h3>Please login to continue</h3>
+              <Button
+                large
+                waves='light'
+                className='login-button'
+                onClick={this.handleLogIn}>
+                Login&rarr;
+              </Button>
+            </div>
+          </div>
+        )}
+      </>
     )
   }
 }

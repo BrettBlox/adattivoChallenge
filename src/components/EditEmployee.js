@@ -48,7 +48,13 @@ class EditEmployee extends Component {
       <Modal
         header='Edit Employee Information'
         trigger={
-          <Button floating small waves='light' icon='edit' />
+          <Button
+            floating
+            small
+            waves='light'
+            className='add-edit-employee'
+            icon='edit'
+          />
         }>
         <form className='modal-content editForm' onSubmit={this.handleSubmit}>
           <Row>

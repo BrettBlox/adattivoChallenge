@@ -58,7 +58,7 @@ class AddEmployee extends Component {
         <Modal
           header='Add New Employee'
           trigger={
-            <Button floating large className='red' waves='light' icon='add' />
+            <Button floating large className='red add-edit-employee' waves='light' icon='add' />
           }>
           <form
             className='modal-content'

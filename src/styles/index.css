@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento&display=swap');
 
-html {
-}
-
 body {
   background-image: linear-gradient(to bottom, #26a69a, #f44336);
   background-size: cover;
@@ -17,9 +14,39 @@ body {
   min-height: 100vh;
 }
 
-/********LOGIN**********/
-.login-button {
-  align-self: center;
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login .login-button {
+  width: 20vw !important;
+  margin-top: 2rem;
+  font-family: 'Quattrocento', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
+}
+
+.logout-button {
+  font-family: 'Quattrocento', sans-serif;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.logout-button:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
 /*********FILTER*********/
@@ -37,10 +64,12 @@ body {
   margin: 0 2rem;
   cursor: pointer;
   font-size: 2rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .filter--active {
-  font-size: 2.3rem;
+  transform: translateY(-3px) scale(1.2);
+  /* font-size: 2.3rem; */
   color: #f44336;
   border-bottom: 1px solid #f44336;
 }
@@ -57,11 +86,12 @@ body {
 /*******EMPLOYEE*******/
 .employee {
   box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .employee:hover {
-  transform: scale(1.01);
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
 .employee > h2 {
@@ -77,4 +107,14 @@ body {
 .add-employee {
   text-align: center;
   margin-top: 1rem;
+}
+
+.add-edit-employee {
+  box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
+  transition: all 0.3s ease-in-out;
+}
+
+.add-edit-employee:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
