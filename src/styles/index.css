@@ -22,7 +22,6 @@ body {
 }
 
 .Login .login-button {
-  width: 20vw !important;
   margin-top: 2rem;
   font-family: 'Quattrocento', sans-serif;
   font-size: 1.3rem;
@@ -42,7 +41,6 @@ body {
   box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
   transition: all 0.3s ease-in-out;
 }
-
 
 .logout-button:hover {
   transform: translateY(-3px) scale(1.01);
@@ -117,4 +115,25 @@ body {
 .add-edit-employee:hover {
   transform: translateY(-3px) scale(1.01);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 2em;
+  }
+  .logout-button {
+    height: 2rem;
+    line-height: 1rem;
+    padding: 0 10px;
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+  .filters {
+    flex-direction: column;
+    margin: 2rem;
+    margin-bottom: 0;
+  }
+  .employee-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

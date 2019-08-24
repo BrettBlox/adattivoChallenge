@@ -36,7 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        {this.state.user ? (
+        {/* {this.state.user ? ( */}
           <div className='App card-panel'>
             <Button
               large
@@ -49,7 +49,7 @@ export default class App extends Component {
             <FilterEmployees />
             <EmployeeList />
           </div>
-        ) : (
+        {/* ) : (
           <div className='App'>
             <div className='Login'>
               <h1>Welcome</h1>
@@ -63,7 +63,7 @@ export default class App extends Component {
               </Button>
             </div>
           </div>
-        )}
+        )} */}
       </>
     )
   }
