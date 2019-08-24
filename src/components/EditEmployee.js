@@ -17,6 +17,13 @@ class EditEmployee extends Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({
+      ...this.state,
+      isActive: this.props.employee.isActive,
+    })
+  }
+
   handleChange = e => {
     this.setState({
       ...this.state,
@@ -24,8 +31,11 @@ class EditEmployee extends Component {
     })
   }
 
-  toggleActive = e => {
-    this.setState({ ...this.state, isActive: !this.state.isActive })
+  toggleActive = event => {
+    this.setState({
+      ...this.state,
+      isActive: !this.state.isActive,
+    })
   }
 
   handleSubmit = e => {
@@ -72,6 +82,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfBirth}
             />
+
             <TextInput
               validate
               label='Date of Employment'
@@ -79,13 +90,14 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfEmployment}
             />
-            <Switch
-              offLabel='Incactive'
-              onLabel='Active'
-              name='isActive'
-              checked={this.props.employee.isActive ? true : false}
-              onChange={this.toggleActive}
-            />
+            <a href='#' onClick={this.toggleActive}>
+              <Switch
+                offLabel='Incactive'
+                onLabel='Active'
+                name='isActive'
+                checked={this.state.isActive}
+              />
+            </a>
           </Row>
           <Button
             className='modal-action modal-close'
