@@ -26,5 +26,5 @@ export function loginUser() {
 }
 
 export function logoutUser() {
-  localStorage.removeItem('currentOpenSaucedUser')
+  localStorage.removeItem('currentUser')
 }
