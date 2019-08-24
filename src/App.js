@@ -1,14 +1,16 @@
 import React from 'react'
-import { IdentityContextProvider } from 'react-netlify-identity-widget'
-import AuthStatusView from './components/AuthStatusView'
+import AddEmployee from './components/AddEmployee'
+import EmployeeList from './components/EmployeeList'
+import FilterEmployees from './components/FilterEmployees'
 
-// import './styles/App.css'
+import './styles/App.css'
 
 export default function App() {
-  const url = 'https://adattivochallenge.netlify.com'
   return (
-    <IdentityContextProvider url={url}>
-      <AuthStatusView />
-    </IdentityContextProvider>
+    <div className='App card-panel'>
+      <AddEmployee />
+      <FilterEmployees />
+      <EmployeeList />
+    </div>
   )
 }
