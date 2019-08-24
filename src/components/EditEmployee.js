@@ -48,7 +48,7 @@ class EditEmployee extends Component {
       <Modal
         header='Edit Employee Information'
         trigger={
-          <Button floating small className='green' waves='light' icon='edit' />
+          <Button floating small waves='light' icon='edit' />
         }>
         <form className='modal-content editForm' onSubmit={this.handleSubmit}>
           <Row>
@@ -92,7 +92,7 @@ class EditEmployee extends Component {
             />
             <a href='#' onClick={this.toggleActive}>
               <Switch
-                offLabel='Incactive'
+                offLabel='Not Active'
                 onLabel='Active'
                 name='isActive'
                 checked={this.state.isActive}

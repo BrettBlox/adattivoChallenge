@@ -24,8 +24,11 @@ body {
   cursor: pointer;
   font-size: 2rem;
 }
+
 .filter--active {
-  border-bottom: 1px solid black;
+  font-size: 2.3rem;
+  color: hsl(0, 100%, 18%);
+  border-bottom: 1px solid hsl(0, 100%, 18%);
 }
 
 /*******EMPLOYEE CONTAINER*******/
@@ -40,6 +43,11 @@ body {
 /*******EMPLOYEE*******/
 .employee {
   box-shadow: 2px 2px 5px rgba(25, 17, 34, 2);
+  transition: all 0.2s ease-in-out;
+}
+
+.employee:hover {
+  transform: scale(1.01);
 }
 
 .employee > h2 {

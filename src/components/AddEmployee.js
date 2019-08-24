@@ -103,7 +103,7 @@ class AddEmployee extends Component {
                 value={this.state.dateOfEmployment}
               />
               <Switch
-                offLabel='Incactive'
+                offLabel='Not Active'
                 onLabel='Active'
                 onChange={this.toggleActive}
                 name='isActive'

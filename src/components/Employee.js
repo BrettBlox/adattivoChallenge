@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import EditEmployee from './EditEmployee'
 
-const active = <div style={{ color: 'blue' }}>Active</div>
+const active = <div style={{ color: 'green' }}>Active</div>
 const inactive = <div style={{ color: 'red' }}>Not Active</div>
 
 const Employee = ({ employee }) => (
