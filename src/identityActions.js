@@ -12,7 +12,7 @@ export function loginUser() {
     } = netlifyIdentity.currentUser()
 
     localStorage.setItem(
-      'current user',
+      'currentUser',
       JSON.stringify({
         ...app_metadata,
         created_at,
