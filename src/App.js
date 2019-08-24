@@ -51,7 +51,7 @@ export default class App extends Component {
           </div>
         ) : (
           <div className='App'>
-            <div className='Login'>
+            <div className='Login card-panel'>
               <h1>Welcome</h1>
               <h3>Please login to continue</h3>
               <Button

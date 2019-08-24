@@ -16,9 +16,12 @@ body {
 
 .Login {
   display: flex;
+  width: 70vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .Login .login-button {
@@ -120,6 +123,15 @@ body {
   body {
     padding: 2em;
   }
+  .Login > h1 {
+    font-size: 3rem;
+  }
+
+  .Login > h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
   .logout-button {
     height: 2rem;
     line-height: 1rem;
