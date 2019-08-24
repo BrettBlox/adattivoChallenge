@@ -15,7 +15,6 @@ const store = createStore(
 )
 
 const rootElement = document.getElementById('root')
-var buttons = document.createElement('div')
 netlifyIdentity.init()
 ReactDOM.render(
   <Provider store={store}>

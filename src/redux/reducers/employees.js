@@ -1,5 +1,4 @@
 import { ADD_EMPLOYEE, EDIT_EMPLOYEE } from '../actionTypes'
-import employeeApp from './index'
 
 const initialState = {
   employees: [
