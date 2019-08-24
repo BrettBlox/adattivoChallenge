@@ -41,15 +41,6 @@ const initialState = {
     },
     {
       id: 4,
-      firstName: 'Jerry',
-      middleInitial: 'J',
-      lastName: 'Garcia',
-      dateOfBirth: 'August 1, 1942',
-      dateOfEmployment: 'June 21, 1997',
-      isActive: true,
-    },
-    {
-      id: 5,
       firstName: 'Alyssa',
       middleInitial: 'K',
       lastName: 'Countway',
@@ -58,7 +49,7 @@ const initialState = {
       isActive: true,
     },
     {
-      id: 6,
+      id: 5,
       firstName: 'Amanda',
       middleInitial: 'S',
       lastName: 'Bloxom',
@@ -67,7 +58,7 @@ const initialState = {
       isActive: true,
     },
     {
-      id: 7,
+      id: 6,
       firstName: 'Dustin',
       middleInitial: 'G',
       lastName: 'Dyer',
@@ -76,7 +67,7 @@ const initialState = {
       isActive: true,
     },
     {
-      id: 8,
+      id: 7,
       firstName: 'Jimmy',
       middleInitial: 'M',
       lastName: 'Hendrix',
