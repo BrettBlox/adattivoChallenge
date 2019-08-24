@@ -1,4 +1,5 @@
 import { ADD_EMPLOYEE, EDIT_EMPLOYEE } from '../actionTypes'
+import employeeApp from './index'
 
 const initialState = {
   employees: [
@@ -99,7 +100,9 @@ export default function employees(state = initialState, action) {
       const { content } = action.payload
       return {
         ...state,
-        employees: [...state.employees, content],
+        employees: state.employees.map(employee =>
+          employee.id === content.id ? content : employee
+        ),
       }
     }
     default:
