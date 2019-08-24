@@ -4,6 +4,7 @@ body {
   background-image: linear-gradient(to bottom, #26a69a, #f44336);
   padding: 3em;
   font-family: 'Quattrocento', sans-serif;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
