@@ -21,13 +21,20 @@ You will also see any lint errors in the console.
 
 ## Login 
 
+![Login](src/screenshots/login-landing.png)
 When a user first visits the site, they will be prompted to login or register in order to access the employee page. Currently, anyone can register and login,
 but restrictions can be made within the Netlify Identity panel. 
+![Login Modal](src/screenshots/login-modal.png)
+![Logged in](src/screenshots/logged-in.png)
+
 
 ## Employee Management Page
 
 Once logged in, you will be able to view the employee management page. On this page, a user will first see the initial state from the redux store. Clicking the red button 
 above the list of users will open a modal with a form to add a new user to the list. 
+![Home](src/screenshots/home.png)
+![Add](src/screenshots/add.png)
+![Edit](src/screenshots/edit.png)
 
 Below this button are links for filtering the employees based on their active/inactive status.
 
