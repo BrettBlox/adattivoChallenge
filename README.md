@@ -10,7 +10,8 @@ Applicants are given the choice between either a front end focused application u
 This site was deployed using Netlify which offers https out of the box, a custom domain and advanced features for authorizing users using Netlify Identity.
 
 ### To run this application locally clone the repo and run:
-
+### `npm install`
+then
 ### `npm start`
 
 This runs the app in the development mode.<br>
@@ -34,11 +35,12 @@ Once logged in, you will be able to view the employee management page. On this p
 above the list of users will open a modal with a form to add a new user to the list. 
 ![Home](src/screenshots/home.png)
 ![Add](src/screenshots/add.png)
-![Edit](src/screenshots/edit.png)
 
 Below this button are links for filtering the employees based on their active/inactive status.
+![Filter](src/screenshots/filter.png)
 
 Within each employee grid item in the list, users can click the green edit button which opens another modal with a form for editing employee information and their status.
+![Edit](src/screenshots/edit.png)
 
 
 
