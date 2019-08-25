@@ -44,6 +44,20 @@ class EditEmployee extends Component {
   }
 
   render() {
+    const {
+      firstName,
+      middleInitial,
+      lastName,
+      dateOfBirth,
+      dateOfEmployment,
+    } = this.state
+    const isEnabled =
+      firstName.length > 0 &&
+      middleInitial.length > 0 &&
+      lastName.length > 0 &&
+      dateOfBirth.length > 0 &&
+      dateOfEmployment.length > 0
+
     return (
       <Modal
         header='Edit Employee Information'
@@ -65,6 +79,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.firstName}
               required
+              error='First name is required'
             />
             <TextInput
               validate
@@ -73,6 +88,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.middleInitial}
               required
+              error='Middle initial is required'
             />
             <TextInput
               validate
@@ -81,6 +97,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.lastName}
               required
+              error='Last name is required'
             />
           </Row>
           <Row>
@@ -91,6 +108,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfBirth}
               required
+              error='Date of birth is required'
             />
             <TextInput
               validate
@@ -99,6 +117,7 @@ class EditEmployee extends Component {
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfEmployment}
               required
+              error='Date of employment required'
             />
             <a href='#' onClick={this.toggleActive}>
               <Switch
@@ -110,7 +129,8 @@ class EditEmployee extends Component {
             </a>
           </Row>
           <Button
-            className='modal-action modal-close'
+            disabled={isEnabled ? false : true}
+            modal='close'
             type='submit'
             waves='light'>
             Submit

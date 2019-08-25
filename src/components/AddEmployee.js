@@ -14,7 +14,6 @@ class AddEmployee extends Component {
       dateOfBirth: '',
       dateOfEmployment: '',
       isActive: false,
-      formValid: false,
     }
   }
 
@@ -27,10 +26,6 @@ class AddEmployee extends Component {
 
   handleChange = e => {
     this.setState({ ...this.state, [e.target.name]: e.target.value })
-    let employeeState = Object.values(this.state).filter(el => el === '')
-    if (!employeeState.length) {
-      this.setState({ formValid: true })
-    }
   }
 
   toggleActive = e => {
@@ -39,13 +34,9 @@ class AddEmployee extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    let employeeState = Object.values(this.state).filter(el => el === '')
-    if (this.state.formValid && !employeeState.length) {
-      this.props.addEmployee(this.state)
-      document.getElementById('add-form').reset()
-      this.resetInputFields()
-      this.setState({ formValid: false })
-    }
+    this.props.addEmployee(this.state)
+    document.getElementById('add-form').reset()
+    this.resetInputFields()
   }
 
   resetInputFields() {
@@ -61,6 +52,19 @@ class AddEmployee extends Component {
   }
 
   render() {
+    const {
+      firstName,
+      middleInitial,
+      lastName,
+      dateOfBirth,
+      dateOfEmployment,
+    } = this.state
+    const isEnabled =
+      firstName.length > 0 &&
+      middleInitial.length > 0 &&
+      lastName.length > 0 &&
+      dateOfBirth.length > 0 &&
+      dateOfEmployment.length > 0
     return (
       <div className='add-employee'>
         <Modal
@@ -86,6 +90,7 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.firstName}
                 required
+                error='First name is required'
               />
               <TextInput
                 validate
@@ -94,6 +99,7 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.middleInitial}
                 required
+                error='Middle initial is required'
               />
               <TextInput
                 validate
@@ -102,6 +108,7 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.lastName}
                 required
+                error='Last name is required'
               />
             </Row>
             <Row>
@@ -112,6 +119,7 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.dateOfBirth}
                 required
+                error='Date of birth is required'
               />
               <TextInput
                 validate
@@ -120,6 +128,7 @@ class AddEmployee extends Component {
                 onChange={this.handleChange}
                 value={this.state.dateOfEmployment}
                 required
+                error='Date of employment is required'
               />
               <Switch
                 offLabel='Not Active'
@@ -129,7 +138,8 @@ class AddEmployee extends Component {
               />
             </Row>
             <Button
-              modal={this.state.formValid ? 'close' : 'confirm'}
+              modal='close'
+              disabled={isEnabled ? false : true}
               type='submit'
               waves='light'>
               Submit
