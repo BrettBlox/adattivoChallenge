@@ -13,7 +13,7 @@ Applicants are given the choice between either a front end focused application u
 - Data should be stored in Redux state with default data in place for first run 
 
 
-### To view the deployed version of the site visit:
+### To view the deployed site visit:
 
 [https://adattivochallenge.netlify.com/](https://adattivochallenge.netlify.com/)
 
