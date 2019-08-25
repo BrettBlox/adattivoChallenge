@@ -17,7 +17,7 @@ Applicants are given the choice between either a front end focused application u
 
 [https://adattivochallenge.netlify.com/](https://adattivochallenge.netlify.com/)
 
-This site was deployed using Netlify which offers https out of the box, a custom domain and advanced features for authorizing users using Netlify Identity.
+This site was deployed using Netlify which offers https out of the box, a custom domain and advanced features for authorizing users with Netlify Identity.
 
 ### To run this application locally clone the repo and run:
 ### `npm install`
