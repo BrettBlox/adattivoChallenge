@@ -1,7 +1,17 @@
 # Brett Bloxom's Front End Challenge
 
-This application was part of the interview/application process for the Associate Contract Developer position at Adattivo in Boulder. 
-Applicants are given the choice between either a front end focused application using React and Redux or a backend focused application. 
+This application was part of the interview/application process for the Associate Contract Developer position at Adattivo in Boulder, CO. 
+Applicants are given the choice between either a front end focused application using React and Redux or a backend focused application with Node or Ruby, both with similar functionality. 
+
+The application is meant to be an employee management system and be able to:
+- List all employees
+- Add new employee
+- Update settings of employee
+- Deactivate an employee
+- Show employee details
+- Should also have to login first to the application to do any of the actions above
+- Data should be stored Redux state with default data in place for first run 
+
 
 ### To view the deployed version of the site visit:
 
