@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/********LOGIN*******/
 .Login {
   display: flex;
   width: 70vw;
@@ -50,7 +51,7 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
-/*********FILTER*********/
+/** VISIBILITY FILTERS **/
 .filters {
   display: flex;
   align-content: center;
@@ -58,8 +59,6 @@ body {
   text-align: center;
   margin: 2rem;
 }
-
-/** visibility filters **/
 .filter {
   padding: 0.3rem 0;
   margin: 0 2rem;
@@ -67,7 +66,6 @@ body {
   font-size: 2rem;
   transition: all 0.2s ease-in-out;
 }
-
 .filter--active {
   transform: translateY(-3px) scale(1.2);
   color: #f44336;
@@ -103,7 +101,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/*******Form***********/
+/*******FORM***********/
 .add-employee {
   text-align: center;
   margin-top: 1rem;
@@ -119,6 +117,7 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
 }
 
+/********MOBILE***********/
 @media screen and (max-width: 480px) {
   body {
     padding: 2em;

@@ -1,5 +1,7 @@
 import netlifyIdentity from 'netlify-identity-widget'
 
+//FUNCTIONS FOR ADDING USER INFO TO LOCAL STORAGE ON LOGIN/LOGOUT
+
 export function loginUser() {
   if (netlifyIdentity && netlifyIdentity.currentUser()) {
     const {

@@ -1,5 +1,7 @@
 import { VISIBILITY_FILTERS } from '../redux/actions'
 
+//HELPER FUNCTIONS FOR FILTERING EMPLOYEES BASED ON THEIR STATUS
+
 export const getEmployeesState = store => store.employees
 
 export const getEmployeeList = store =>
