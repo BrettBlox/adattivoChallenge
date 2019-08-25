@@ -58,7 +58,13 @@ class AddEmployee extends Component {
         <Modal
           header='Add New Employee'
           trigger={
-            <Button floating large className='red add-edit-employee' waves='light' icon='add' />
+            <Button
+              floating
+              large
+              className='red add-edit-employee'
+              waves='light'
+              icon='add'
+            />
           }>
           <form
             className='modal-content'
@@ -71,6 +77,7 @@ class AddEmployee extends Component {
                 name='firstName'
                 onChange={this.handleChange}
                 value={this.state.firstName}
+                required
               />
               <TextInput
                 validate
@@ -78,6 +85,7 @@ class AddEmployee extends Component {
                 name='middleInitial'
                 onChange={this.handleChange}
                 value={this.state.middleInitial}
+                required
               />
               <TextInput
                 validate
@@ -85,6 +93,7 @@ class AddEmployee extends Component {
                 name='lastName'
                 onChange={this.handleChange}
                 value={this.state.lastName}
+                required
               />
             </Row>
             <Row>
@@ -94,6 +103,7 @@ class AddEmployee extends Component {
                 name='dateOfBirth'
                 onChange={this.handleChange}
                 value={this.state.dateOfBirth}
+                required
               />
               <TextInput
                 validate
@@ -101,12 +111,14 @@ class AddEmployee extends Component {
                 name='dateOfEmployment'
                 onChange={this.handleChange}
                 value={this.state.dateOfEmployment}
+                required
               />
               <Switch
                 offLabel='Not Active'
                 onLabel='Active'
                 onChange={this.toggleActive}
                 name='isActive'
+                required
               />
             </Row>
             <Button
