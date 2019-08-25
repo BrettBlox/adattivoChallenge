@@ -9,8 +9,8 @@ Applicants are given the choice between either a front end focused application u
 - Update settings of employee
 - Deactivate an employee
 - Show employee details
-- Should also have to login first to the application to do any of the actions above
-- Data should be stored Redux state with default data in place for first run 
+- Should also have to login first to the application to do any of the above actions
+- Data should be stored in Redux state with default data in place for first run 
 
 
 ### To view the deployed version of the site visit:
