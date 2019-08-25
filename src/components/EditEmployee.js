@@ -64,6 +64,7 @@ class EditEmployee extends Component {
               name='firstName'
               onChange={this.handleChange}
               defaultValue={this.props.employee.firstName}
+              required
             />
             <TextInput
               validate
@@ -71,6 +72,7 @@ class EditEmployee extends Component {
               name='middleInitial'
               onChange={this.handleChange}
               defaultValue={this.props.employee.middleInitial}
+              required
             />
             <TextInput
               validate
@@ -78,6 +80,7 @@ class EditEmployee extends Component {
               name='lastName'
               onChange={this.handleChange}
               defaultValue={this.props.employee.lastName}
+              required
             />
           </Row>
           <Row>
@@ -87,14 +90,15 @@ class EditEmployee extends Component {
               name='dateOfBirth'
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfBirth}
+              required
             />
-
             <TextInput
               validate
               label='Date of Employment'
               name='dateOfEmployment'
               onChange={this.handleChange}
               defaultValue={this.props.employee.dateOfEmployment}
+              required
             />
             <a href='#' onClick={this.toggleActive}>
               <Switch
