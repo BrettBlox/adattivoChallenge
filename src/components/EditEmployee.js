@@ -119,14 +119,16 @@ class EditEmployee extends Component {
               required
               error='Date of employment required'
             />
-            <a href='#' onClick={this.toggleActive}>
+            <button
+              onClick={this.toggleActive}
+              style={{ backgroundColor: 'transparent', border: 'none' }}>
               <Switch
                 offLabel='Not Active'
                 onLabel='Active'
                 name='isActive'
                 checked={this.state.isActive}
               />
-            </a>
+            </button>
           </Row>
           <Button
             disabled={isEnabled ? false : true}
