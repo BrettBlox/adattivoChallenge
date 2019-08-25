@@ -14,6 +14,7 @@ class AddEmployee extends Component {
       dateOfBirth: '',
       dateOfEmployment: '',
       isActive: false,
+      formValid: false,
     }
   }
 
@@ -26,6 +27,10 @@ class AddEmployee extends Component {
 
   handleChange = e => {
     this.setState({ ...this.state, [e.target.name]: e.target.value })
+    let employeeState = Object.values(this.state).filter(el => el === '')
+    if (!employeeState.length) {
+      this.setState({ formValid: true })
+    }
   }
 
   toggleActive = e => {
@@ -34,10 +39,13 @@ class AddEmployee extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log(this.state.id)
-    this.props.addEmployee(this.state)
-    document.getElementById('add-form').reset()
-    this.resetInputFields()
+    let employeeState = Object.values(this.state).filter(el => el === '')
+    if (this.state.formValid && !employeeState.length) {
+      this.props.addEmployee(this.state)
+      document.getElementById('add-form').reset()
+      this.resetInputFields()
+      this.setState({ formValid: false })
+    }
   }
 
   resetInputFields() {
@@ -118,11 +126,10 @@ class AddEmployee extends Component {
                 onLabel='Active'
                 onChange={this.toggleActive}
                 name='isActive'
-                required
               />
             </Row>
             <Button
-              className='modal-action modal-close'
+              modal={this.state.formValid ? 'close' : 'confirm'}
               type='submit'
               waves='light'>
               Submit
