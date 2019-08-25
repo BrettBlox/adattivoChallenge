@@ -3,7 +3,7 @@
 This application was part of the interview/application process for the Associate Contract Developer position at Adattivo in Boulder, CO. 
 Applicants are given the choice between either a front end focused application using React and Redux or a backend focused application with Node or Ruby, both with similar functionality. 
 
-The application is meant to be an employee management system able to:
+#### The application is meant to be an employee management system able to:
 - List all employees
 - Add new employee
 - Update settings of employee
@@ -21,7 +21,7 @@ This site was deployed using Netlify which offers https out of the box, a custom
 
 ### To run this application locally clone the repo and run:
 ### `npm install`
-then
+#### then
 ### `npm start`
 
 This runs the app in the development mode.<br>
@@ -41,15 +41,14 @@ but restrictions can be made within the Netlify Identity panel.
 
 ## Employee Management Page
 
-Once logged in, you will be able to view the employee management page. On this page, a user will first see the initial state from the redux store. Clicking the red button 
-above the list of users will open a modal with a form to add a new user to the list. 
+#### Once logged in, you will be able to view the employee management page. On this page, a user will first see the initial state from the redux store. Clicking the red button above the list of users will open a modal with a form to add a new user to the list. 
 ![Home](src/screenshots/home.png)
 ![Add](src/screenshots/add.png)
 
-Below this button are links for filtering the employees based on their active/inactive status.
+#### Below this button are links for filtering the employees based on their active/inactive status.
 ![Filter](src/screenshots/filter.png)
 
-Within each employee grid item in the list, users can click the green edit button which opens another modal with a form for editing employee information and their status.
+#### Within each employee grid item in the list, users can click the green edit button which opens another modal with a form for editing employee information and their status.
 ![Edit](src/screenshots/edit.png)
 
 
